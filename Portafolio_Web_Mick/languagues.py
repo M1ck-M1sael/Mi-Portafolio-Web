@@ -1,8 +1,22 @@
-# Sección para crear un diccionario solo llamar a la función.
-
 TEXTOS = {
+    #diccionario español
     "es": {
-        "nombre": "Mick Misael",
         "btn_idioma": "EN",
-        "inicio": "Inicio",
-        "": "",
+        "nombre_nav": "Mick Misael",
+        "nav_items": {
+            "sobre_mi": "Sobre mí",
+            "proyectos": "Proyectos",
+            "contacto": "Contacto",
+        },
+    },
+    #diccionario inglés
+    "en": {
+        "btn_idioma": "ES",
+        "nombre_nav": "Mick Misael",
+        "nav_items": {
+            "sobre_mi": "About me",
+            "proyectos": "Projects",
+            "contacto": "Contact",
+        },
+    }
+}
