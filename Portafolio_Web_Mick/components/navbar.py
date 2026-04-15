@@ -18,7 +18,7 @@ def navbar() -> rx.Component:
                 class_name="typewriter",
                 font_weight="bold",
                 font_family="monospace",
-                size="5",
+                size="6",
             ),
             align="center",
             spacing="3",

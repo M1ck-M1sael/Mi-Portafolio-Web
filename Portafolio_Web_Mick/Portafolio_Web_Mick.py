@@ -2,24 +2,30 @@ import reflex as rx
 from .components.navbar import navbar
 from .components.footer import footer
 from .components.background import background
+from .views.hero import hero     # <--- Nueva importación
 from .views.about import about
 from .views.projects import projects
 from .views.contact import contact
 
 def index() -> rx.Component:
     return rx.box(
-        background(), # El video de las estrellas de fondo
-        navbar(),     # El menú que ya tenemos con State.menu_items
+        background(), # El video de las estrellas fijo al fondo
+        navbar(),     # El menú pegado arriba
         rx.vstack(
-            # Aquí "inyectas" tus vistas una tras otra
+            hero(),     # <--- Primera sección que se ve
             about(),    
             projects(), 
             contact(),
             footer(),
             width="100%",
-            spacing="0", # Evita espacios en blanco entre secciones
+            spacing="0",
         ),
     )
+
+app = rx.App(
+    stylesheets=["/styles.css"],
+)
+app.add_page(index)
 
 # Solo una ruta principal
 app = rx.App(
