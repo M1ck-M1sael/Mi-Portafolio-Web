@@ -1,0 +1,21 @@
+@keyframes typing { 
+    from { width: 0; } 
+    to { width: 100%; } 
+}
+
+@keyframes blink-caret { 
+    from, to { border_color: transparent; } 
+    50% { border_color: white; } 
+}
+
+/* Podemos crear una clase de una vez para no ensuciar el styles.py */
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid;
+    margin: 0;
+    width: 0;
+    animation: 
+        typing 3s steps(11, end) forwards,
+        blink-caret 0.75s step-end infinite;
+}

@@ -1,5 +1,5 @@
 import reflex as rx
-from Portafolio_Web_Mick.state import State
+from ..state import State
 from Portafolio_Web_Mick.styles import typewriter_style
 from Portafolio_Web_Mick.views.links import SOCIAL_LINKS, social_button
 
@@ -15,7 +15,7 @@ def navbar() -> rx.Component:
             rx.divider(orientation="vertical", height="1.5em", border_color="white"),
             rx.text(
                 "Mick Misael",
-                style=typewriter_style,
+                class_name="typewriter",
                 font_weight="bold",
                 font_family="monospace",
                 size="5",

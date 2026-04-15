@@ -8,6 +8,9 @@ TEXTOS = {
             "proyectos": "Proyectos",
             "contacto": "Contacto",
         },
+        "about_me": {
+            "heading": "Sobre mí",
+        }
     },
     #diccionario inglés
     "en": {
@@ -18,5 +21,8 @@ TEXTOS = {
             "proyectos": "Projects",
             "contacto": "Contact",
         },
+        "about_me": {
+            "heading": "About me",
+        }
     }
 }

@@ -1,6 +1,6 @@
 import reflex as rx
 from Portafolio_Web_Mick.languagues import TEXTOS
-from typing import Dict # Importa Dict
+from typing import Dict
 
 class State(rx.State):
     idioma: str = "es"
@@ -8,7 +8,13 @@ class State(rx.State):
     def cambiar_idioma(self):
         self.idioma = "en" if self.idioma == "es" else "es"
 
-@rx.var
-def menu_items(self) -> list[list[str]]:
-    # Convierte el diccionario {"sobre_mi": "Sobre mí"} en [["sobre_mi", "Sobre mí"]]
-    return [[k, v] for k, v in TEXTOS[self.idioma]["nav_items"].items()]
+    # ¡ESTO TIENE QUE IR AQUÍ ADENTRO!
+    @rx.var
+    def menu_items(self) -> list[list[str]]:
+        return [[k, v] for k, v in TEXTOS[self.idioma]["nav_items"].items()]
+    
+    # También noté que en tu navbar usas State.contenido, 
+    # asegúrate de tenerlo definido aquí adentro también:
+    @rx.var
+    def contenido(self) -> dict:
+        return TEXTOS[self.idioma]
