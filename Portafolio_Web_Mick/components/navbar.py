@@ -6,7 +6,7 @@ from Portafolio_Web_Mick.views.links import SOCIAL_LINKS, social_button
 def navbar() -> rx.Component:
     return rx.hstack(
         rx.hstack(
-            rx.avatar(src="/MickRM_Logo2.png", fallback="MM", size="5", border_radius="full"),
+            rx.avatar(src="/MickRM_Logo2.png", fallback="MM", size="5", border_radius="90px"),
             rx.divider(orientation="vertical", height="1.5em", border_color="rgba(255, 255, 255, 0.5)"),
             rx.text("Mick Misael", class_name="typewriter", font_weight="bold", font_family="monospace", size="6"),
             align="center",
