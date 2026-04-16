@@ -34,12 +34,6 @@ def footer() -> rx.Component:
                         align="center",
                         spacing="4",
                     ),
-                    rx.text(
-                        "Built with Python & Reflex",
-                        size="1",
-                        color="rgba(255, 255, 255, 0.3)",
-                        margin_top="1em",
-                    ),
                     align_items="center",
                     spacing="2",
                 ),
