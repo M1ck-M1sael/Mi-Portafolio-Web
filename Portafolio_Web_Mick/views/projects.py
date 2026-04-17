@@ -1,12 +1,11 @@
 import reflex as rx
 
-# Reutilizamos tu estilo de vidrio pero adaptado a tarjetas
 project_card_style = {
     "background_color": "rgba(15, 15, 15, 0.45)",
     "backdrop_filter": "blur(5px)",
     "border": "1px solid rgba(255, 255, 255, 0.1)",
     "border_radius": "20px",
-    "overflow": "hidden", # Importante para que la imagen no se salga
+    "overflow": "hidden",
     "transition": "transform 0.3s ease, border-color 0.3s ease",
     "_hover": {
         "transform": "translateY(-10px)",
@@ -14,7 +13,7 @@ project_card_style = {
     }
 }
 
-def project_item(title: str, description: str, image: str, tags: list) -> rx.Component:
+def project_item(title: str, description: str, image: str, tags: list, url: str) -> rx.Component:
     return rx.box(
         rx.vstack(
             rx.box(
@@ -26,12 +25,25 @@ def project_item(title: str, description: str, image: str, tags: list) -> rx.Com
                         spacing="2",
                         padding_top="1em"
                     ),
+
+                    rx.link(
+                        rx.icon(tag="external-link", size=20),
+                        href=url,
+                        is_external=True,
+                        position="absolute",
+                        bottom="1.2em",
+                        right="1.2em",
+                        color="white",
+                        _hover={"color": "#0070f3", "transform": "scale(1.2)"},
+                        transition="all 0.2s",
+                    ),
+
                     position="absolute",
                     top="0",
                     left="0",
                     width="100%",
                     height="100%",
-                    background="rgba(0, 0, 0, 0.8)",
+                    background="rgba(0, 0, 0, 0.85)",
                     opacity="0",
                     transition="opacity 0.3s",
                     justify="center",
@@ -43,7 +55,7 @@ def project_item(title: str, description: str, image: str, tags: list) -> rx.Com
                 width="100%",
             ),
             rx.box(
-                rx.heading(title, size="5", color="white", padding="1em"),
+                rx.heading(title, size="5", color="white", padding="1em", text_align="center"),
                 width="100%",
                 background="rgba(20, 20, 20, 0.6)",
             ),
@@ -55,22 +67,51 @@ def project_item(title: str, description: str, image: str, tags: list) -> rx.Com
 def projects() -> rx.Component:
     return rx.center(
         rx.vstack(
-            rx.heading("Proyectos", size="9", color="white", margin_bottom="1.5em"),
+            rx.heading("Proyectos", size="9", color="white", margin_bottom="1.5em", text_align="center"),
             rx.grid(
                 project_item(
                     "StackTON", 
-                    "Arquitectura de microservicios escalable usando AWS Lambda y API Gateway.", 
-                    "/project1.jpg", 
-                    ["AWS", "Python", "Terraform"]
+                    "Startup de Arquitectura de Soluciones. Implementaciones de Infraestrucura en AWS y desarrollo web con Reflex y Stack convencional.", 
+                    "/projects/StackTON_Projects.jpg", 
+                    ["AWS", "Python", "AWS"],
+                    "https://github.com/M1ck-M1sael/Stack-618_Official_Web/tree/main"
                 ),
                 project_item(
-                    "DevOps Dashboard", 
-                    "Monitorización en tiempo real de logs de servidor con integración de Discord.", 
-                    "/project2.jpg", 
-                    ["Linux", "Docker", "Reflex"]
+                    "Futuro Proyecto", 
+                    "Esá de aquellas tu mamasita homs, guardame un cachito, muajaja.", 
+                    "/projects/OnProcess_Projects.jpg", 
+                    ["Vatos Locos", "4", "Ever"],
+                    "https://www.youtube.com/watch?v=qwfhifRyhok"
                 ),
-                # agregar mas
-                columns={"initial": "1", "sm": "2", "lg": "3"}, # 1 col en móvil, 2 en tablet, 3 en desktop
+                project_item(
+                    "Futuro Proyecto", 
+                    "Esá de aquellas tu mamasita homs, guardame un cachito, muajaja.", 
+                    "/projects/OnProcess_Projects.jpg", 
+                    ["Vatos Locos", "4", "Ever"],
+                    "https://www.youtube.com/watch?v=qwfhifRyhok"
+                ),
+                project_item(
+                    "Futuro Proyecto", 
+                    "Esá de aquellas tu mamasita homs, guardame un cachito, muajaja.", 
+                    "/projects/OnProcess_Projects.jpg", 
+                    ["Vatos Locos", "4", "Ever"],
+                    "https://www.youtube.com/watch?v=qwfhifRyhok"
+                ),
+                project_item(
+                    "Futuro Proyecto", 
+                    "Esá de aquellas tu mamasita homs, guardame un cachito, muajaja.", 
+                    "/projects/OnProcess_Projects.jpg", 
+                    ["Vatos Locos", "4", "Ever"],
+                    "https://www.youtube.com/watch?v=qwfhifRyhok"
+                ),
+                project_item(
+                    "Futuro Proyecto", 
+                    "Esá de aquellas tu mamasita homs, guardame un cachito, muajaja.", 
+                    "/projects/OnProcess_Projects.jpg", 
+                    ["Vatos Locos", "4", "Ever"],
+                    "https://www.youtube.com/watch?v=qwfhifRyhok"
+                ),
+                columns={"initial": "1", "sm": "2", "lg": "3"},
                 spacing="6",
                 width="100%",
             ),
