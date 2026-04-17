@@ -9,6 +9,37 @@ glass_style = {
     "width": "100%", 
     "max_width": "1800px", 
 }
+
+def download_cv_button() -> rx.Component:
+    return rx.link(
+        rx.button(
+            rx.hstack(
+                rx.icon(tag="download", size=20),
+                rx.text("Descargar CV", size="3", font_weight="bold"),
+                align="center",
+                spacing="2",
+            ),
+            padding="1.5em",
+            height="auto",
+            width="fit-content",
+            background_color="rgba(0, 112, 243, 0.1)", # Un toque azul StackTON
+            border="1px solid rgba(0, 112, 243, 0.4)",
+            backdrop_filter="blur(5px)",
+            color="white",
+            border_radius="15px",
+            _hover={
+                "background_color": "rgba(0, 112, 243, 0.2)",
+                "transform": "scale(1.05)",
+                "border_color": "#0070f3",
+                "box_shadow": "0 0 20px rgba(0, 112, 243, 0.3)",
+            },
+            transition="all 0.3s ease",
+        ),
+        href="/about/CV_Misael.pdf",
+        download=True,
+        text_decoration="none",
+    )
+
 # diccionario de colores para cada habilidad
 def skill_column(title: str, skills_data: list[dict]) -> rx.Component:
     return rx.vstack(
@@ -50,7 +81,7 @@ def about() -> rx.Component:
         {"name": "Hablar como Gollum", "color": "grass"},
         {"name": "Silbar (Infravalorado)", "color": "yellow"},
         {"name": "Hacer Guturales", "color": "tomato"},
-        {"name": "Concer todo el lore del W2M Crew", "color": "pink"},
+        {"name": "Conocer todo el lore del W2M Crew", "color": "pink"},
         {"name": "Redundar", "color": "amber"},
         {"name": "Hablar como Gollum", "color": "grass"}
     ]
@@ -69,7 +100,7 @@ def about() -> rx.Component:
                     ),
                     rx.flex(
                         rx.image(
-                            src="/Sun.jpg",
+                            src="/about/Sun.jpg",
                             width=["100%", "100%", "700px"], 
                             border_radius="25px", 
                             border="3px solid rgba(255, 255, 255, 0.2)",
@@ -93,6 +124,10 @@ def about() -> rx.Component:
                                 "Amante de los gatos, arañas y el exceso de café... soy el estereotipo de mi carrera, ¿verdad? ¡Caray!",
                                 font_style="italic", color="#0070f3", size="5"
                             ),
+
+                            rx.box(height="1.5em"),
+                            download_cv_button(),
+
                             align_items="start",
                             spacing="5",
                             flex="1",
