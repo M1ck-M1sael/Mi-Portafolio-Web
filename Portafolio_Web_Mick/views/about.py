@@ -1,4 +1,5 @@
 import reflex as rx
+from ..state import State
 
 glass_style = {
     "background_color": "rgba(15, 15, 15, 0.45)", 
@@ -91,7 +92,7 @@ def about() -> rx.Component:
             rx.box(
                 rx.vstack(
                     rx.heading(
-                        "Sobre mí", 
+                        State.contenido["about_me"].to(dict)["heading"], 
                         size="9", 
                         color="white", 
                         margin_bottom="1em", 
@@ -107,21 +108,22 @@ def about() -> rx.Component:
                             object_fit="cover",
                         ),
                         rx.vstack(
-                            rx.heading("¡Hola! Soy Misael", size="8", color="white"),
+                            rx.heading(
+                                State.contenido["about_me"].to(dict)["presentation_name"], size="8", color="white"),
                             rx.text(
-                                "Soy estudiante de Ingeniería en Sistemas Computacionales en el Tecnológico Nacional de México, y actualmente trabajo como Systems Administrator, en donde gestiono infraestructura, soporte y operación de sistemas en entornos productivos.",
+                                State.contenido["about_me"].to(dict)["description_1"],
                                 size="5", color="white", text_align="justify"
                             ),
                             rx.text(
-                                "También tengo mi propia Startup llamada StackTON, una empresa de soluciones IT. En ella soy CEO y Arquitecto Cloud con AWS.",
+                                State.contenido["about_me"].to(dict)["description_2"],
                                 size="5", color="white", text_align="justify"
                             ),
                             rx.text(
-                                "Me caracterizo por el aprendizaje constante y la diciplina técnica. Actualmente me encuentro en proceso de obtener la certificación AWS Cloud Practitioner, fortaleciendo mis conocimientos en servicios cloud, buenas prácticas y  arquitectura básica.",
+                                State.contenido["about_me"].to(dict)["description_3"],
                                 size="5", color="white", text_align="justify"
                             ),
                             rx.text(
-                                "Amante de los gatos, arañas y el exceso de café... soy el estereotipo de mi carrera, ¿verdad? ¡Caray!",
+                                State.contenido["about_me"].to(dict)["funfact"],
                                 font_style="italic", color="#0070f3", size="5"
                             ),
 
