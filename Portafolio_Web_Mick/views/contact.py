@@ -1,5 +1,5 @@
 import reflex as rx
-from Portafolio_Web_Mick.views.about import download_cv_button # Reutilizamos tu botón de CV
+from Portafolio_Web_Mick.views.about import download_cv_button
 
 contact_glass_style = {
     "background_color": "rgba(15, 15, 15, 0.45)", 
@@ -69,8 +69,8 @@ def contact() -> rx.Component:
                     # Lado Derecho: Botones de Acción
                     rx.vstack(
                         contact_item(
-                            "mail", "Gmail", "mickmisael@gmail.com", 
-                            "mailto:mickmisael@gmail.com", "#EA4335"
+                            "mail", "Gmail", "mickmisa3l@gmail.com", 
+                            "mailto:mickmisa3l@gmail.com", "#EA4335"
                         ),
                         contact_item(
                             "linkedin", "LinkedIn", "Conectemos profesionalmente", 

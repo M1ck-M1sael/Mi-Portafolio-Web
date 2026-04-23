@@ -5,17 +5,25 @@ from Portafolio_Web_Mick.views.links import SOCIAL_LINKS, social_button
 
 def navbar() -> rx.Component:
     return rx.hstack(
-        rx.hstack(
-            rx.avatar(src="/MickRM_Logo2.png", fallback="MM", size="5", border_radius="90px"),
-            rx.divider(orientation="vertical", height="1.5em", border_color="rgba(255, 255, 255, 0.5)"),
-            rx.text("Mick Misael", class_name="typewriter", font_weight="bold", font_family="monospace", size="6"),
-            align="center",
-            spacing="3",
-            width="250px",
+        # --- BLOQUE DE IDENTIDAD: Ahora es un Link al Inicio ---
+        rx.link(
+            rx.hstack(
+                rx.avatar(src="/MickRM_Logo2.png", fallback="MM", size="5", border_radius="90px"),
+                rx.divider(orientation="vertical", height="1.5em", border_color="rgba(255, 255, 255, 0.5)"),
+                rx.text("Mick Misael", class_name="typewriter", font_weight="bold", font_family="monospace", size="6"),
+                align="center",
+                spacing="3",
+                width="250px",
+            ),
+            href="#inicio", # Apunta al ID del Hero
+            text_decoration="none",
+            color="white", # Mantenemos el color blanco
+            _hover={"opacity": "0.8", "text_decoration": "none"},
         ),
 
         rx.spacer(),
 
+        # --- SECCIÓN MENÚ DINÁMICO ---
         rx.hstack(
             rx.foreach(
                 State.menu_items,
@@ -39,6 +47,7 @@ def navbar() -> rx.Component:
 
         rx.spacer(),
 
+        # --- REDES Y CAMBIO DE IDIOMA ---
         rx.hstack(
             rx.hstack(
                 *[social_button(tag, url) for tag, url in SOCIAL_LINKS.items()],
