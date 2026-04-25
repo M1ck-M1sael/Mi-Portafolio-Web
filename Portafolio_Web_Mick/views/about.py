@@ -16,14 +16,14 @@ def download_cv_button() -> rx.Component:
         rx.button(
             rx.hstack(
                 rx.icon(tag="download", size=20),
-                rx.text("Descargar CV", size="3", font_weight="bold"),
+                rx.text(State.contenido["btn_cv"], size="3", font_weight="bold"),
                 align="center",
                 spacing="2",
             ),
             padding="1.5em",
             height="auto",
             width="fit-content",
-            background_color="rgba(0, 112, 243, 0.1)", # Un toque azul StackTON
+            background_color="rgba(0, 112, 243, 0.1)", 
             border="1px solid rgba(0, 112, 243, 0.4)",
             backdrop_filter="blur(5px)",
             color="white",
@@ -41,13 +41,13 @@ def download_cv_button() -> rx.Component:
         text_decoration="none",
     )
 
-# diccionario de colores para cada habilidad
-def skill_column(title: str, skills_data: list[dict]) -> rx.Component:
+def skill_column(title: rx.Var, skills_data: rx.Var) -> rx.Component:
     return rx.vstack(
         rx.text(title, size="7", font_weight="bold", color="white", margin_bottom="1.2em"),
         rx.vstack(
-            *[
-                rx.badge(
+            rx.foreach(
+                skills_data,
+                lambda skill: rx.badge(
                     skill["name"], 
                     variant="surface", 
                     color_scheme=skill["color"],
@@ -55,8 +55,8 @@ def skill_column(title: str, skills_data: list[dict]) -> rx.Component:
                     padding_x="1.8em",
                     padding_y="0.6em",
                     size="3",
-                ) for skill in skills_data
-            ],
+                )
+            ),
             align="center",
             spacing="3",
         ),
@@ -65,39 +65,13 @@ def skill_column(title: str, skills_data: list[dict]) -> rx.Component:
     )
 
 def about() -> rx.Component:
-    # define el color específico para cada habilidad
-    habilidades_duras = [
-        {"name": "AWS Cloud", "color": "orange"},
-        {"name": "SysAdmin (Windows & Linux)", "color": "gray"},
-        {"name": "Python & Reflex", "color": "blue"},
-        {"name": "Cultura DevOps", "color": "purple"}
-    ]
-    habilidades_blandas = [
-        {"name": "Comunicación Asertiva", "color": "teal"},
-        {"name": "Liderazgo", "color": "indigo"},
-        {"name": "Trabajo en Equipo", "color": "cyan"},
-        {"name": "Resolución de Problemas", "color": "crimson"}
-    ]
-    habilidades_inutiles = [
-        {"name": "Hablar como Gollum", "color": "grass"},
-        {"name": "Silbar (Infravalorado)", "color": "yellow"},
-        {"name": "Hacer Guturales", "color": "tomato"},
-        {"name": "Conocer todo el lore del W2M Crew", "color": "pink"},
-        {"name": "Redundar", "color": "amber"},
-        {"name": "Hablar como Gollum", "color": "grass"}
-    ]
-
     return rx.center(
         rx.vstack(
             rx.box(
                 rx.vstack(
                     rx.heading(
-                        State.contenido["about_me"].to(dict)["heading"], 
-                        size="9", 
-                        color="white", 
-                        margin_bottom="1em", 
-                        width="100%", 
-                        text_align="center"
+                        State.contenido["about_title"],
+                        size="9", color="white", margin_bottom="1em", width="100%", text_align="center"
                     ),
                     rx.flex(
                         rx.image(
@@ -108,28 +82,16 @@ def about() -> rx.Component:
                             object_fit="cover",
                         ),
                         rx.vstack(
-                            rx.heading(
-                                State.contenido["about_me"].to(dict)["presentation_name"], size="8", color="white"),
+                            rx.heading(State.contenido["about_name"], size="8", color="white"),
+                            rx.text(State.contenido["description_1"], size="5", color="white", text_align="justify"),
+                            rx.text(State.contenido["description_2"], size="5", color="white", text_align="justify"),
+                            rx.text(State.contenido["description_3"], size="5", color="white", text_align="justify"),
                             rx.text(
-                                State.contenido["about_me"].to(dict)["description_1"],
-                                size="5", color="white", text_align="justify"
-                            ),
-                            rx.text(
-                                State.contenido["about_me"].to(dict)["description_2"],
-                                size="5", color="white", text_align="justify"
-                            ),
-                            rx.text(
-                                State.contenido["about_me"].to(dict)["description_3"],
-                                size="5", color="white", text_align="justify"
-                            ),
-                            rx.text(
-                                State.contenido["about_me"].to(dict)["funfact"],
+                                State.contenido["funfact"],
                                 font_style="italic", color="#0070f3", size="5"
                             ),
-
                             rx.box(height="1.5em"),
                             download_cv_button(),
-
                             align_items="start",
                             spacing="5",
                             flex="1",
@@ -147,20 +109,17 @@ def about() -> rx.Component:
             rx.box(
                 rx.vstack(
                     rx.heading(
-                        "Habilidades", 
-                        size="9", 
-                        color="white", 
-                        margin_bottom="1.5em", 
-                        width="100%", 
-                        text_align="center"
+                        State.contenido["skills_title"],
+                        size="9", color="white", margin_bottom="1.5em", width="100%", text_align="center"
                     ),
                     rx.flex(
-                        # Llamada actualizada con las nuevas listas de datos
-                        skill_column("Habilidades Duras", habilidades_duras),
+                        skill_column(State.contenido["label_hard"], State.lista_duras),
                         rx.divider(orientation="vertical", height="22em", border_color="rgba(255,255,255,0.15)"),
-                        skill_column("Habilidades Blandas", habilidades_blandas),
+                        
+                        skill_column(State.contenido["label_soft"], State.lista_blandas),
                         rx.divider(orientation="vertical", height="22em", border_color="rgba(255,255,255,0.15)"),
-                        skill_column("Habilidades Inútiles", habilidades_inutiles),
+                        
+                        skill_column(State.contenido["label_useless"], State.lista_inutiles),
                         
                         width="100%",
                         flex_direction=["column", "column", "row"],
@@ -171,7 +130,6 @@ def about() -> rx.Component:
                 ),
                 style=glass_style,
             ),
-            
             width="95%", 
             align="center",
         ),
