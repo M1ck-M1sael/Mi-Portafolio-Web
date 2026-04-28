@@ -1,4 +1,5 @@
 import reflex as rx
+from ..state import State
 
 project_card_style = {
     "background_color": "rgba(15, 15, 15, 0.45)",
@@ -67,49 +68,52 @@ def project_item(title: str, description: str, image: str, tags: list, url: str)
 def projects() -> rx.Component:
     return rx.center(
         rx.vstack(
-            rx.heading("Proyectos", size="9", color="white", margin_bottom="1.5em", text_align="center"),
+            rx.heading(
+                State.contenido["projects_title"], 
+                size="9", color="white", margin_bottom="1.5em", text_align="center"
+                ),
             rx.grid(
                 project_item(
-                    "StackTON", 
-                    "Startup de Arquitectura de Soluciones. Implementaciones de Infraestrucura en AWS y desarrollo web con Reflex y Stack convencional.", 
-                    "/projects/StackTON_Projects.jpg", 
+                    State.contenido["project_1"],
+                    State.contenido["project_1_description"],
+                    "/projects/StackTON_Projects.jpg",
                     ["AWS", "Python", "AWS"],
                     "https://github.com/M1ck-M1sael/Stack-618_Official_Web/tree/main"
                 ),
                 project_item(
-                    "Futuro Proyecto", 
-                    "Esá de aquellas tu mamasita homs, guardame un cachito, muajaja.", 
+                    State.contenido["project_2"],
+                    State.contenido["project_2_description"],
                     "/projects/OnProcess_Projects.jpg", 
-                    ["Vatos Locos", "4", "Ever"],
+                    ["Matarile", "Rile", "Ro"],
+                    "https://www.youtube.com/watch?v=-jHYYzS0U-c"
+                ),
+                project_item(
+                    State.contenido["project_3"],
+                    State.contenido["project_3_description"],
+                    "/projects/OnProcess_Projects.jpg", 
+                    ["Matarile", "Rile", "Ro"],
+                    "https://www.youtube.com/watch?v=-jHYYzS0U-c"
+                ),
+                project_item(
+                    State.contenido["project_4"],
+                    State.contenido["project_4_description"],
+                    "/projects/OnProcess_Projects.jpg", 
+                    ["Matarile", "Rile", "Ro"],
+                    "https://www.youtube.com/watch?v=-jHYYzS0U-c"
+                ),
+                project_item(
+                    State.contenido["project_5"],
+                    State.contenido["project_5_description"],
+                    "/projects/OnProcess_Projects.jpg", 
+                    ["Matarile", "Rile", "Ro"],
                     "https://www.youtube.com/watch?v=qwfhifRyhok"
                 ),
                 project_item(
-                    "Futuro Proyecto", 
-                    "Esá de aquellas tu mamasita homs, guardame un cachito, muajaja.", 
+                    State.contenido["project_6"],
+                    State.contenido["project_6_description"],
                     "/projects/OnProcess_Projects.jpg", 
-                    ["Vatos Locos", "4", "Ever"],
-                    "https://www.youtube.com/watch?v=qwfhifRyhok"
-                ),
-                project_item(
-                    "Futuro Proyecto", 
-                    "Esá de aquellas tu mamasita homs, guardame un cachito, muajaja.", 
-                    "/projects/OnProcess_Projects.jpg", 
-                    ["Vatos Locos", "4", "Ever"],
-                    "https://www.youtube.com/watch?v=qwfhifRyhok"
-                ),
-                project_item(
-                    "Futuro Proyecto", 
-                    "Esá de aquellas tu mamasita homs, guardame un cachito, muajaja.", 
-                    "/projects/OnProcess_Projects.jpg", 
-                    ["Vatos Locos", "4", "Ever"],
-                    "https://www.youtube.com/watch?v=qwfhifRyhok"
-                ),
-                project_item(
-                    "Futuro Proyecto", 
-                    "Esá de aquellas tu mamasita homs, guardame un cachito, muajaja.", 
-                    "/projects/OnProcess_Projects.jpg", 
-                    ["Vatos Locos", "4", "Ever"],
-                    "https://www.youtube.com/watch?v=qwfhifRyhok"
+                    ["Matarile", "Rile", "Ro"],
+                    "https://www.youtube.com/watch?v=-jHYYzS0U-c"
                 ),
                 columns={"initial": "1", "sm": "2", "lg": "3"},
                 spacing="6",

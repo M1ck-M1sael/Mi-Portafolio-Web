@@ -10,6 +10,7 @@ TEXTOS = {
             "proyectos": "Proyectos",
             "contacto": "Contacto",
         },
+        # CONTENIDO DE LA SECCIÓN "SOBRE MÍ"
         "about_title": "Sobre mí",
         "about_name": "¡Hola! Soy Misael.",
         "description_1": "Soy estudiante de Ingeniería en Sistemas Computacionales en el Tecnológico Nacional de México, y actualmente trabajo como Systems Administrator, en donde gestiono infraestructura, soporte y operación de sistemas en entornos productivos.",
@@ -20,6 +21,8 @@ TEXTOS = {
         "label_hard": "Habilidades Duras",
         "label_soft": "Habilidades Blandas",
         "label_useless": "Habilidades Inútiles",
+
+        # CONTENIDO DE LA SECCIÓN "HABILIDADES"
         "habilidades_duras": [
             {"name": "AWS Cloud", "color": "orange"},
             {"name": "SysAdmin (Windows & Linux)", "color": "gray"},
@@ -38,22 +41,23 @@ TEXTOS = {
             {"name": "Hacer Guturales", "color": "tomato"},
             {"name": "Conocer todo el lore del W2M Crew", "color": "pink"},
             {"name": "Redundar", "color": "amber"},
+            {"name": "Hablar como Gollum", "color": "grass"},
         ],
-        "projects_zone": {
-            "projects_title": "Proyectos",
-            "project_1": "StackTON",
-            "project_1_description": "Startup de Arquitectura de Soluciones. Implementaciones de Infraestrucura en AWS y desarrollo web con Reflex y Stack convencional.",
-            "project_2": "Futuro Proyecto",
-            "project_2_description": "En proceso de desarrollo... ¡Pronto habrá novedades!",
-            "project_3": "Futuro Proyecto",
-            "project_3_description": "En proceso de desarrollo... ¡Pronto habrá novedades!",
-            "project_4": "Futuro Proyecto",
-            "project_4_description": "En proceso de desarrollo... ¡Pronto habrá novedades!",
-            "project_5": "Futuro Proyecto",
-            "project_5_description": "En proceso de desarrollo... ¡Pronto habrá novedades!",
-            "project_6": "Futuro Proyecto",
-            "project_6_description": "En proceso de desarrollo... ¡Pronto habrá novedades!",
-        },
+
+        # CONTENIDO DE LA SECCIÓN "PROYECTOS"
+        "projects_title": "Proyectos",
+        "project_1": "StackTON",
+        "project_1_description": "Startup de Arquitectura de Soluciones. Implementaciones de Infraestrucura en AWS y desarrollo web con Reflex y Stack convencional.",
+        "project_2": "Futuro Proyecto",
+        "project_2_description": "En proceso de desarrollo... ¡Pronto habrá novedades!",
+        "project_3": "Futuro Proyecto",
+        "project_3_description": "En proceso de desarrollo... ¡Pronto habrá novedades!",
+        "project_4": "Futuro Proyecto",
+        "project_4_description": "En proceso de desarrollo... ¡Pronto habrá novedades!",
+        "project_5": "Futuro Proyecto",
+        "project_5_description": "En proceso de desarrollo... ¡Pronto habrá novedades!",
+        "project_6": "Futuro Proyecto",
+        "project_6_description": "En proceso de desarrollo... ¡Pronto habrá novedades!",
     },
     "en": {
         "btn_idioma": "ES",
@@ -64,6 +68,8 @@ TEXTOS = {
             "proyectos": "Projects",
             "contacto": "Contact",
         },
+
+        # CONTENIDO DE LA SECCIÓN "SOBRE MÍ"
         "about_title": "About me",
         "about_name": "Hello there! I'm Misael.",
         "description_1": "I am a Computer Systems Engineering student at Tecnológico Nacional de México and currently work as a Systems Administrator, managing infrastructure, support, and system operations in production environments.",
@@ -74,6 +80,8 @@ TEXTOS = {
         "label_hard": "Hard Skills",
         "label_soft": "Soft Skills",
         "label_useless": "Useless Skills",
+
+        # CONTENIDO DE LA SECCIÓN "HABILIDADES"
         "habilidades_duras": [
             {"name": "AWS Cloud", "color": "orange"},
             {"name": "SysAdmin (Windows & Linux)", "color": "gray"},
@@ -92,21 +100,22 @@ TEXTOS = {
             {"name": "Death Growls", "color": "tomato"},
             {"name": "W2M Crew Lore Expert", "color": "pink"},
             {"name": "Redundancy", "color": "amber"},
+            {"name": "Gollum Impression", "color": "grass"},
         ],
-        "projects_zone": {
-            "projects_title": "Projects",
-            "project_1": "StackTON",
-            "project_1_description": "Architecture of IT Solutions. Implementations of Infrastructure in AWS and web development with Reflex and conventional Stack.",
-            "project_2": "Future Project",
-            "project_2_description": "In development... Stay tuned for updates!",
-            "project_3": "Future Project",
-            "project_3_description": "In development... Stay tuned for updates!",
-            "project_4": "Future Project",
-            "project_4_description": "In development... Stay tuned for updates!",
-            "project_5": "Future Project",
-            "project_5_description": "In development... Stay tuned for updates!",
-            "project_6": "Future Project",
-            "project_6_description": "In development... Stay tuned for updates!",
-        },
+        
+        # CONTENIDO DE LA SECCIÓN "PROYECTOS"
+        "projects_title": "Projects",
+        "project_1": "StackTON",
+        "project_1_description": "Architecture of IT Solutions. Implementations of Infrastructure in AWS and web development with Reflex and conventional Stack.",
+        "project_2": "Future Project",
+        "project_2_description": "In development... Stay tuned for updates!",
+        "project_3": "Future Project",
+        "project_3_description": "In development... Stay tuned for updates!",
+        "project_4": "Future Project",
+        "project_4_description": "In development... Stay tuned for updates!",
+        "project_5": "Future Project",
+        "project_5_description": "In development... Stay tuned for updates!",
+        "project_6": "Future Project",
+        "project_6_description": "In development... Stay tuned for updates!",
     }
 }
