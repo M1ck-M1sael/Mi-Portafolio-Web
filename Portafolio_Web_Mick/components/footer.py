@@ -1,5 +1,5 @@
 import reflex as rx
-from datetime import datetime
+from ..state import State
 from Portafolio_Web_Mick.views.links import SOCIAL_LINKS
 
 def footer() -> rx.Component:
@@ -24,7 +24,7 @@ def footer() -> rx.Component:
                                 color="white",
                             ),
                             rx.text(
-                                f"© {datetime.now().year} Mick Misael. Todos los derechos reservados.",
+                                State.contenido["footer_copyright"],
                                 size="2",
                                 color="rgba(255, 255, 255, 0.6)",
                             ),

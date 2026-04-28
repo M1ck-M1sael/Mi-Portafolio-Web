@@ -1,4 +1,4 @@
-# languages.py
+import datetime
 
 TEXTOS = {
 
@@ -12,6 +12,9 @@ TEXTOS = {
             "proyectos": "Proyectos",
             "contacto": "Contacto",
         },
+        # CONTENIDO DE LA SECCIÓN "FOOTER"
+        "footer_copyright": f"© {datetime.datetime.now().year} Mick Misael. Todos los derechos reservados.",
+
         # CONTENIDO DE LA SECCIÓN "SOBRE MÍ"
         "about_title": "Sobre mí",
         "about_name": "¡Hola! Soy Misael.",
@@ -82,6 +85,8 @@ TEXTOS = {
             "proyectos": "Projects",
             "contacto": "Contact",
         },
+        # CONTENIDO DE LA SECCIÓN "FOOTER"
+        "footer_copyright": f"© {datetime.datetime.now().year} Mick Misael. All rights reserved.",
 
         # CONTENIDO DE LA SECCIÓN "SOBRE MÍ"
         "about_title": "About me",
