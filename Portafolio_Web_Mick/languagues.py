@@ -1,6 +1,8 @@
 # languages.py
 
 TEXTOS = {
+
+    # CONTENIDO EN ESPAÑOL
     "es": {
         "btn_idioma": "EN",
         "btn_cv": "Descargar CV",
@@ -58,7 +60,19 @@ TEXTOS = {
         "project_5_description": "En proceso de desarrollo... ¡Pronto habrá novedades!",
         "project_6": "Futuro Proyecto",
         "project_6_description": "En proceso de desarrollo... ¡Pronto habrá novedades!",
+
+        # CONTENIDO DE LA SECCIÓN "CONTACTO"
+        "contact_title": "Contacto",
+        "contact_header": "¿Tienes un proyecto en mente?",
+        "contact_invitation_1": "Actualmente estoy abierto a nuevas oportunidades, colaboraciones en proyectos de infraestructura Cloud o consultorías técnicas a través de StackTON.",
+        "contact_invitation_2": "Si buscas un perfil con disciplina técnica, amor por la automatización y que sepa trabajar bajo presión (y con mucho café), ¡hablemos!",
+        "contact_cv_prompt": "¿Necesitas mi perfil detallado?",
+        "contact_gmail": "mickmisa3l@gmail.com",
+        "contact_linkedin": "Conectemos profesionalmente",
+        "contact_github": "Revisa mi código y despliegues",
     },
+
+    # CONTENIDO EN INGLÉS (TRADUCCIÓN)
     "en": {
         "btn_idioma": "ES",
         "btn_cv": "Download CV",
@@ -117,5 +131,15 @@ TEXTOS = {
         "project_5_description": "In development... Stay tuned for updates!",
         "project_6": "Future Project",
         "project_6_description": "In development... Stay tuned for updates!",
+
+        # CONTENIDO DE LA SECCIÓN "CONTACTO"
+        "contact_title": "Contact",
+        "contact_header": "Got a project in mind?",
+        "contact_invitation_1": "I am currently open to new opportunities, collaborations on cloud infrastructure projects, or technical consulting through StackTON.",
+        "contact_invitation_2": "If you're looking for a profile with technical discipline, a love for automation, and the ability to work under pressure (and with lots of coffee), let's talk!",
+        "contact_cv_prompt": "Do you need my detailed profile?",
+        "contact_gmail": "mickmisa3l@gmail.com",
+        "contact_linkedin": "Let's connect professionally",
+        "contact_github": "Check out my code and deployments",
     }
 }

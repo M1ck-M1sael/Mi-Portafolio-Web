@@ -1,5 +1,6 @@
 import reflex as rx
 from Portafolio_Web_Mick.views.about import download_cv_button
+from Portafolio_Web_Mick.state import State
 
 contact_glass_style = {
     "background_color": "rgba(15, 15, 15, 0.45)", 
@@ -43,41 +44,46 @@ def contact() -> rx.Component:
     return rx.center(
         rx.box(
             rx.vstack(
-                rx.heading("Contacto", size="9", color="white", margin_bottom="1em", text_align="center", width="100%"),
+                rx.heading(State.contenido["contact_title"], 
+                           size="9", color="white", margin_bottom="1em", text_align="center", width="100%"
+                           ),
                 
                 rx.flex(
-                    # Lado Izquierdo: Texto Invitación
                     rx.vstack(
-                        rx.heading("¿Tienes un proyecto en mente?", size="8", color="white"),
+                        rx.heading(State.contenido["contact_header"], 
+                                   size="8", color="white"
+                                   ),
                         rx.text(
-                            "Actualmente estoy abierto a nuevas oportunidades, colaboraciones en proyectos de infraestructura Cloud o consultorías técnicas a través de StackTON.",
+                            State.contenido["contact_invitation_1"],
                             size="5", color="rgba(255,255,255,0.8)", text_align="justify"
                         ),
                         rx.text(
-                            "Si buscas un perfil con disciplina técnica, amor por la automatización y que sepa trabajar bajo presión (y con mucho café), ¡hablemos!",
+                            State.contenido["contact_invitation_2"],
                             size="5", color="rgba(255,255,255,0.8)", text_align="justify"
                         ),
                         rx.box(height="2em"),
-                        # Aquí reciclamos tu botón de CV que ya funciona
-                        rx.text("¿Necesitas mi perfil detallado?", size="3", color="white", margin_bottom="0.5em"),
+                        rx.text(
+                            State.contenido["contact_cv_prompt"],
+                            size="3", color="white", margin_bottom="0.5em"
+                            ),
+
                         download_cv_button(),
                         align_items="start",
                         spacing="4",
                         flex="1",
                     ),
 
-                    # Lado Derecho: Botones de Acción
                     rx.vstack(
                         contact_item(
-                            "mail", "Gmail", "mickmisa3l@gmail.com", 
+                            "mail", "Gmail", State.contenido["contact_gmail"], 
                             "mailto:mickmisa3l@gmail.com", "#EA4335"
                         ),
                         contact_item(
-                            "linkedin", "LinkedIn", "Conectemos profesionalmente", 
+                            "linkedin", "LinkedIn", State.contenido["contact_linkedin"], 
                             "https://www.linkedin.com/in/misael-lópez-franco-409566209", "#0077B5"
                         ),
                         contact_item(
-                            "github", "GitHub", "Revisa mi código y despliegues", 
+                            "github", "GitHub", State.contenido["contact_github"], 
                             "https://github.com/M1ck-M1sael", "#FFFFFF"
                         ),
                         spacing="4",
