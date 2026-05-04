@@ -20,7 +20,7 @@ TEXTOS = {
         "about_name": "¡Hola! Soy Misael.",
         "description_1": "Soy estudiante de Ingeniería en Sistemas Computacionales en el Tecnológico Nacional de México, y actualmente trabajo como Systems Administrator, en donde gestiono infraestructura, soporte y operación de sistemas en entornos productivos.",
         "description_2": "También tengo mi propia Startup llamada StackTON, una empresa de soluciones IT. En ella soy CEO y Arquitecto Cloud con AWS.",
-        "description_3": "Me caracterizo por el aprendizaje constante y la diciplina técnica. Actualmente me encuentro en proceso de obtener la certificación AWS Cloud Practitioner, fortaleciendo mis conocimientos en servicios cloud, buenas prácticas y arquitectura básica.",
+        "description_3": "Me caracterizo por el aprendizaje constante y la disciplina técnica. Actualmente me encuentro en proceso de obtener la certificación AWS Cloud Practitioner, fortaleciendo mis conocimientos en servicios cloud, buenas prácticas y arquitectura básica.",
         "funfact": "Amante de los gatos, arañas y el exceso de café... soy el estereotipo de mi carrera, ¿verdad? ¡Caray!",
         "skills_title": "Habilidades",
         "label_hard": "Habilidades Duras",
