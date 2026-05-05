@@ -80,9 +80,11 @@ jobs:
       - name: Export Reflex Frontend
         run: |
           reflex export --frontend-only
+          mkdir -p ./public_html
+          unzip frontend.zip -d ./public_html
         env:
           API_URL: https://mickmisael.com
 
       - name: Deploy frontend to S3
         run: |
-          aws s3 sync .web/public s3://${{ env.S3_BUCKET }} --delete
+          aws s3 sync ./public_html s3://${{ env.S3_BUCKET }} --delete
