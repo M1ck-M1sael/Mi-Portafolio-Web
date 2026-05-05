@@ -7,7 +7,7 @@ on:
 env: 
   AWS_REGION: us-east-1
   ECR_REPOSITORY: portafolio_mick-backend
-  ECS_SERVICE: Cluster-Portafolio_Mick
+  ECS_SERVICE: Portafolio_Mick-Backend-Family-service-pwxgg9e4
   ECS_CLUSTER: Cluster-Portafolio_Mick
   S3_BUCKET: mick-misael-portafolio
 
