@@ -8,11 +8,11 @@ def navbar() -> rx.Component:
         rx.link(
             rx.hstack(
                 rx.avatar(src="/MickRM_Logo2.png", fallback="MM", size="5", border_radius="90px"),
-                rx.divider(orientation="vertical", height="1.5em", border_color="rgba(255, 255, 255, 0.5)"),
+                rx.divider(orientation="vertical", height="1.5em", border_color="rgba(255, 255, 255, 0.5)", display=["none", "block"]),
                 rx.text("Mick Misael", class_name="typewriter", font_weight="bold", font_family="monospace", size="6"),
                 align="center",
                 spacing="3",
-                width="250px",
+                width=["auto", "auto", "250px"],
             ),
             href="#inicio",
             text_decoration="none",
@@ -41,6 +41,7 @@ def navbar() -> rx.Component:
             ),
             spacing="0",
             align="center", 
+            display=["none", "none", "flex"],
         ),
 
         rx.spacer(),
@@ -50,8 +51,9 @@ def navbar() -> rx.Component:
                 *[social_button(tag, url) for tag, url in SOCIAL_LINKS.items()],
                 spacing="4",
                 align="center",
+                display=["none", "none", "flex"],
             ),
-            rx.divider(orientation="vertical", height="1.5em", border_color="rgba(255, 255, 255, 0.5)"),
+            rx.divider(orientation="vertical", height="1.5em", border_color="rgba(255, 255, 255, 0.5)", display=["none", "none", "block"]),
             rx.button(
                 State.contenido["btn_idioma"],
                 on_click=State.cambiar_idioma,
@@ -61,12 +63,12 @@ def navbar() -> rx.Component:
             ),
             align="center", 
             spacing="4",
-            width="250px",
+            width=["auto", "auto", "250px"],
             justify="end",
         ),
 
         width="100%",
-        padding_x="2em",
+        padding_x=["1em", "2em"],
         padding_y="1em",
         align="center",
         justify="between",

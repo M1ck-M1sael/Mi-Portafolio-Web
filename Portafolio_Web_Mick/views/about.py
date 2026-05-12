@@ -12,33 +12,33 @@ glass_style = {
 }
 
 def download_cv_button() -> rx.Component:
-    return rx.link(
-        rx.button(
-            rx.hstack(
-                rx.icon(tag="download", size=20),
-                rx.text(State.contenido["btn_cv"], size="3", font_weight="bold"),
-                align="center",
-                spacing="2",
-            ),
-            padding="1.5em",
-            height="auto",
-            width="fit-content",
-            background_color="rgba(0, 112, 243, 0.1)", 
-            border="1px solid rgba(0, 112, 243, 0.4)",
-            backdrop_filter="blur(5px)",
-            color="white",
-            border_radius="15px",
-            _hover={
-                "background_color": "rgba(0, 112, 243, 0.2)",
-                "transform": "scale(1.05)",
-                "border_color": "#0070f3",
-                "box_shadow": "0 0 20px rgba(0, 112, 243, 0.3)",
-            },
-            transition="all 0.3s ease",
+    return rx.button(
+        rx.hstack(
+            rx.icon(tag="download", size=20),
+            rx.text(State.contenido["btn_cv"], size="3", font_weight="bold"),
+            align="center",
+            spacing="2",
         ),
-        href="/about/CV_Misael.pdf",
-        download=True,
-        text_decoration="none",
+        on_click=rx.download(
+            url="/about/CV_Misael.pdf",
+            filename="CV_Misael_Lopez.pdf", 
+        ),
+        padding="1.5em",
+        height="auto",
+        width="fit-content",
+        background_color="rgba(0, 112, 243, 0.1)", 
+        border="1px solid rgba(0, 112, 243, 0.4)",
+        backdrop_filter="blur(5px)",
+        color="white",
+        border_radius="15px",
+        _hover={
+            "background_color": "rgba(0, 112, 243, 0.2)",
+            "transform": "scale(1.05)",
+            "border_color": "#0070f3",
+            "box_shadow": "0 0 20px rgba(0, 112, 243, 0.3)",
+        },
+        transition="all 0.3s ease",
+        cursor="pointer",
     )
 
 def skill_column(title: rx.Var, skills_data: rx.Var) -> rx.Component:

@@ -1,7 +1,5 @@
-#Apartado para el fondo de la pagina
-
 import reflex as rx
-from Portafolio_Web_Mick.video_state import VideoState # Importa el estado en el que se fuerza la reproducción del video para evitar problemas de autoplay
+from Portafolio_Web_Mick.video_state import VideoState 
 
 def background():
     return rx.el.video(
@@ -18,8 +16,8 @@ def background():
             "position": "fixed",
             "top": "0",
             "left": "0",
-            "width": "100vw",
-            "height": "100vh",
+            "width": "100%",
+            "height": "100%",
             "objectFit": "cover",
             "zIndex": "-1",
             "pointerEvents": "none",

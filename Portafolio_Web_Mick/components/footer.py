@@ -5,9 +5,9 @@ from Portafolio_Web_Mick.views.links import SOCIAL_LINKS
 def footer() -> rx.Component:
     return rx.box(
         rx.center(
-            rx.hstack(
+            rx.flex( 
                 rx.vstack(
-                    rx.hstack(
+                    rx.flex( 
                         rx.image(
                             src="/MickRM_Logo2.png",
                             width="80px",
@@ -22,17 +22,20 @@ def footer() -> rx.Component:
                                 font_family="monospace",
                                 size="5",
                                 color="white",
+                                text_align={"initial": "center", "md": "left"} 
                             ),
                             rx.text(
                                 State.contenido["footer_copyright"],
                                 size="2",
                                 color="rgba(255, 255, 255, 0.6)",
+                                text_align={"initial": "center", "md": "left"}
                             ),
-                            align_items="start",
+                            align_items={"initial": "center", "md": "start"}, 
                             spacing="0",
                         ),
                         align="center",
                         spacing="4",
+                        direction={"initial": "column", "md": "row"},
                     ),
                     align_items="center",
                     spacing="2",
@@ -42,7 +45,8 @@ def footer() -> rx.Component:
                     orientation="vertical", 
                     height="120px", 
                     border_color="rgba(255, 255, 255, 0.15)",
-                    margin_x="3em"
+                    margin_x="3em",
+                    display={"initial": "none", "md": "block"} 
                 ),
 
                 rx.vstack(
@@ -69,15 +73,18 @@ def footer() -> rx.Component:
                         )
                         for icon_tag, url in SOCIAL_LINKS.items()
                     ],
-                    align_items="start",
+                    align_items={"initial": "center", "md": "start"}, 
                     spacing="3",
                 ),
+                direction={"initial": "column", "md": "row"},
                 align="center",
                 justify="center",
-                padding_y="4em",
-                width="100%",
-                max_width="1200px",
+                spacing={"initial": "6", "md": "6"}, 
+                width="100%"
             ),
+            padding_y="4em",
+            width="100%",
+            max_width="1200px",
         ),
         background_color="rgba(15, 15, 15, 0.45)",
         backdrop_filter="blur(5px)",
