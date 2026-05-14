@@ -1,5 +1,5 @@
 import reflex as rx
-from Portafolio_Web_Mick.languagues import TEXTOS
+from .languagues import TEXTOS
 from typing import Dict
 
 class State(rx.State):
@@ -9,14 +9,15 @@ class State(rx.State):
     def set_sidebar_open(self, open: bool):
         self.sidebar_open = open
 
+    @rx.var
+    def certificaciones_lista(self) -> list[dict[str, str]]:
+        return self.contenido.get("cert_list", [])
+
     def toggle_sidebar(self):
         self.sidebar_open = not self.sidebar_open
 
     def cambiar_idioma(self):
         self.idioma = "en" if self.idioma == "es" else "es"
-
-    def toggle_sidebar(self):
-        self.sidebar_open = not self.sidebar_open
 
     @rx.var
     def menu_items(self) -> list[list[str]]:

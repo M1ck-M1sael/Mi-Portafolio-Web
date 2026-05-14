@@ -73,6 +73,67 @@ TEXTOS = {
         "contact_gmail": "mickmisa3l@gmail.com",
         "contact_linkedin": "Conectemos profesionalmente",
         "contact_github": "Revisa mi código y despliegues",
+
+        # CONTENIDO DE LA SECCIÓN "CERTIFICACIONES"
+
+        "cert_title": "Certificaciones",
+        "cert_description": "Validación oficial y conocimientos respaldados por la industria.",
+        "cert_list": [
+            {
+                "title": "AWS Certified Cloud Practitioner",
+                "issuer": "Udemy",
+                "date": "Diciembre 2025",
+                "badge_url": "/certs/AWS_CP_Cert.webp",
+                "verify_url": "https://www.udemy.com/certificate/UC-278702d3-b0cd-49d9-a689-c4456046b9c6/",
+                "btn_verify": "Verificar Credencial",
+            },
+
+            {
+                "title": "Administración de Active Directory con Windows PowerShell",
+                "issuer": "Udemy",
+                "date": "Junio 2024",
+                "badge_url": "/certs/ADM_AD_DMS_W_Cert.webp",
+                "verify_url": "https://www.udemy.com/certificate/UC-7ed2e0cd-3029-4973-a2af-367d7de59ca1/",
+                "btn_verify": "Verificar Credencial",
+            },
+
+            {
+                "title": "PowerShell Básico para Principiantes",
+                "issuer": "Udemy",
+                "date": "Mayo 2024",
+                "badge_url": "/certs/POW_B_Cert.webp",
+                "verify_url": "https://www.udemy.com/certificate/UC-ec262e83-b38b-43b0-b411-e44dadaa7768/",
+                "btn_verify": "Verificar Credencial",
+            },
+
+            {
+                "title": "Curso de Auditores Internos de Sistema de Gestion (ISO 19011:2018 e ISO 27001:2022)",
+                "issuer": "Aktiva",
+                "date": "Julio 2023",
+                "badge_url": "/certs/ISO_27001.webp",
+                "verify_url": "https://www.linkedin.com/in/misael-lópez-franco-409566209/overlay/Certifications/1871249793/treasury?profileId=ACoAADTxHMkBvlU0vVhyg9M8VbXIEd5TT9D6aj4",
+                "btn_verify": "Verificar Credencial",
+            },
+
+            {
+                "title": "AD DS, DNS y DHCP en Windows Server",
+                "issuer": "Udemy",
+                "date": "Agosto 2023",
+                "badge_url": "/certs/AD_DNS_DHCP_Cert.webp",
+                "verify_url": "https://www.udemy.com/certificate/UC-0883095e-1b97-4b91-9040-bd23260b50de/",
+                "btn_verify": "Verificar Credencial",
+            },
+
+            {
+                "title": "Administración de Windows desde la Consola",
+                "issuer": "Udemy",
+                "date": "Febrero 2023",
+                "badge_url": "/certs/ADM_WIN_CLI_Cert.webp",
+                "verify_url": "https://www.udemy.com/certificate/UC-9ad30dee-258a-4ea5-9667-b7ff443405ba/",
+                "btn_verify": "Verificar Credencial",
+            },
+        ],
+
     },
 
     # CONTENIDO EN INGLÉS (TRADUCCIÓN)
@@ -146,5 +207,64 @@ TEXTOS = {
         "contact_gmail": "mickmisa3l@gmail.com",
         "contact_linkedin": "Let's connect professionally",
         "contact_github": "Check out my code and deployments",
+
+        # CONTENIDO DE LA SECCIÓN "CERTIFICACIONES"
+        "cert_title": "Certifications",
+        "cert_description": "Official validation and knowledge supported by the industry.",
+        "cert_list": [
+            {
+                "title": "AWS Certified Cloud Practitioner",
+                "issuer": "Udemy",
+                "date": "March 2026",
+                "badge_url": "/certs/AWS_CP_Cert.webp",
+                "verify_url": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-278702d3-b0cd-49d9-a689-c4456046b9c6.pdf",
+                "btn_verify": "Verify Credential",
+            },
+
+            {
+                "title": "Administration of Active Directory with Windows PowerShell",
+                "issuer": "Udemy",
+                "date": "June 2024",
+                "badge_url": "/certs/ADM_AD_DMS_W_Cert.webp",
+                "verify_url": "https://www.udemy.com/certificate/UC-7ed2e0cd-3029-4973-a2af-367d7de59ca1/",
+                "btn_verify": "Verify Credential",
+            },
+
+            {
+                "title": "PowerShell Basics for Beginners",
+                "issuer": "Udemy",
+                "date": "May 2024",
+                "badge_url": "/certs/POW_B_Cert.webp",
+                "verify_url": "https://www.udemy.com/certificate/UC-ec262e83-b38b-43b0-b411-e44dadaa7768/",
+                "btn_verify": "Verify Credential",
+            },
+
+            {
+                "title": "Internal Auditor for Management Systems (ISO 19011:2018 e ISO 27001:2022)",
+                "issuer": "Aktiva",
+                "date": "July 2023",
+                "badge_url": "/certs/ISO_27001.webp",
+                "verify_url": "https://www.linkedin.com/in/misael-lópez-franco-409566209/overlay/Certifications/1871249793/treasury?profileId=ACoAADTxHMkBvlU0vVhyg9M8VbXIEd5TT9D6aj4",
+                "btn_verify": "Verify Credential",
+            },
+
+            {
+                "title": "AD DS, DNS y DHCP on Windows Server",
+                "issuer": "Udemy",
+                "date": "August 2023",
+                "badge_url": "/certs/AD_DNS_DHCP_Cert.webp",
+                "verify_url": "https://www.udemy.com/certificate/UC-0883095e-1b97-4b91-9040-bd23260b50de/",
+                "btn_verify": "Verify Credential",
+            },
+
+            {
+                "title": "Administration of Windows from the Console",
+                "issuer": "Udemy",
+                "date": "February 2023",
+                "badge_url": "/certs/ADM_WIN_CLI_Cert.webp",
+                "verify_url": "https://www.udemy.com/certificate/UC-9ad30dee-258a-4ea5-9667-b7ff443405ba/",
+                "btn_verify": "Verify Credential",
+            },
+        ],
     }
 }

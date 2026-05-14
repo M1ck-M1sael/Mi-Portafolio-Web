@@ -5,6 +5,7 @@ from .components.footer import footer
 from .components.background import background
 from .views.hero import hero
 from .views.about import about
+from .views.cert import certifications
 from .views.projects import projects
 from .views.contact import contact
 
@@ -14,7 +15,8 @@ def index() -> rx.Component:
         navbar(),
         rx.vstack(
             hero(),
-            about(),    
+            about(),   
+            certifications(),
             projects(), 
             contact(),
             footer(),
