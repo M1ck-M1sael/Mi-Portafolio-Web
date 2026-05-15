@@ -72,7 +72,7 @@ def certifications() -> rx.Component:
         rx.vstack(
             rx.heading(
                 State.contenido["cert_title"], 
-                size="9", 
+                size={"initial": "7", "md": "9"}, 
                 margin_bottom="0.5em",
                 color="white"
             ),
