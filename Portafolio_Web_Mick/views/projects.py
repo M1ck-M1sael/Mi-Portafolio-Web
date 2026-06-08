@@ -85,7 +85,7 @@ def projects() -> rx.Component:
                     State.contenido["project_2_description"],
                     "/projects/Metod_Py.webp", 
                     ["Python", "GitHub", "Mathematics"],
-                    "https://www.youtube.com/watch?v=-jHYYzS0U-c"
+                    "https://github.com/M1ck-M1sael/Metodos-Numericos-Scripts-Python"
                 ),
                 project_item(
                     State.contenido["project_3"],
