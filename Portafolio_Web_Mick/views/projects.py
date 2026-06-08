@@ -83,8 +83,8 @@ def projects() -> rx.Component:
                 project_item(
                     State.contenido["project_2"],
                     State.contenido["project_2_description"],
-                    "/projects/OnProcess_Projects.jpg", 
-                    ["Matarile", "Rile", "Ro"],
+                    "/projects/Metod_Py.webp", 
+                    ["Python", "GitHub", "Mathematics"],
                     "https://www.youtube.com/watch?v=-jHYYzS0U-c"
                 ),
                 project_item(
