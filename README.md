@@ -31,9 +31,6 @@ Al migrar de una arquitectura basada en contenedores a un modelo 100% estático,
 Como resultado de esta decisión de diseño, funciones dinámicas como el **botón de cambio de idioma** se encuentran actualmente deshabilitadas. El ahorro radical de costos operativos y la mejora en seguridad justificaron la pérdida temporal de esta funcionalidad, documentándose como deuda técnica para una futura refactorización mediante enrutamiento estático (SSG).
 
 ## 💻 Ejecución Local
-Si deseas clonar y probar este proyecto en tu entorno local:
-
-## 💻 Ejecución Local
 Si deseas clonar y correr este proyecto en tu entorno local:
 
 1. Clona el repositorio:
