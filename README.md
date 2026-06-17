@@ -26,7 +26,7 @@ Para garantizar principios de eficiencia operativa y reducción de costos, la ar
 * **Estado inicial:** Despliegue basado en contenedores utilizando **Amazon ECS**, lo que generaba costos constantes por mantener recursos de cómputo encendidos.
 * **Solución y Resultado:** Migración total de la infraestructura hacia un modelo de alojamiento estático serverless. Al exportar el proyecto a un bucket S3 y distribuirlo mediante CloudFront, se logró reducir drásticamente el gasto operativo mensual de AWS, se eliminó la carga de parcheo de servidores y se optimizó la latencia para el usuario final.
 
-## ⚠️ Limitaciones Conocidas (Trade-offs Arquitectónicos)
+## ⚠️ Limitaciones Conocidas
 Al migrar de una arquitectura basada en contenedores a un modelo 100% estático, se eliminó el servidor backend en Python. Esto cortó la conexión de WebSockets que el framework Reflex requiere para manejar el estado interactivo de la aplicación. 
 Como resultado de esta decisión de diseño, funciones dinámicas como el **botón de cambio de idioma** se encuentran actualmente deshabilitadas. El ahorro radical de costos operativos y la mejora en seguridad justificaron la pérdida temporal de esta funcionalidad, documentándose como deuda técnica para una futura refactorización mediante enrutamiento estático (SSG).
 
