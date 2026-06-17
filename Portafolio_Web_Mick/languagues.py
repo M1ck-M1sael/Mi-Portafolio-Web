@@ -51,12 +51,12 @@ TEXTOS = {
 
         # CONTENIDO DE LA SECCIÓN "PROYECTOS"
         "projects_title": "Proyectos",
-        "project_1": "StackTON",
-        "project_1_description": "Startup de Arquitectura de Soluciones. Implementaciones de Infraestrucura en AWS y desarrollo web con Reflex y Stack convencional.",
+        "project_1": "Portafolio Web Personal",
+        "project_1_description": "Desarrollo Full-Stack e implementación en AWS con el uso de la cultura DevOps.",
         "project_2": "Python | Script de Métodos Numéricos",
         "project_2_description": "Resolver problemas matemáticos complejos mediante aproximaciones computacionales, iteraciones y optimización de recursos, minimizando el margen de error.",
-        "project_3": "Futuro Proyecto",
-        "project_3_description": "En proceso de desarrollo... ¡Pronto habrá novedades!",
+        "project_3": "StackTON",
+        "project_3_description": "Startup de Arquitectura de Soluciones. Implementaciones de Infraestrucura en AWS y desarrollo web con Reflex y Stack convencional.",
         "project_4": "Futuro Proyecto",
         "project_4_description": "En proceso de desarrollo... ¡Pronto habrá novedades!",
         "project_5": "Futuro Proyecto",
@@ -73,6 +73,47 @@ TEXTOS = {
         "contact_gmail": "mickmisa3l@gmail.com",
         "contact_linkedin": "Conectemos profesionalmente",
         "contact_github": "Revisa mi código y despliegues",
+
+#CONTENIDO DE LA SECCIÓN "DOCUMENTACIÓN"
+
+        "doc_markdown": """
+# 🚀 Documentación de Arquitectura y CI/CD
+
+El portafolio web (mickmisael.com) no es únicamente una galería de proyectos y experiencia, sino una demostración práctica y funcional de mis conocimientos y habilidades en arquitectura Cloud y despliegue automatizado
+
+Desarrollado íntegramente en Python utilizando el framework Reflex, el objetivo principal de este proyecto es evidenciar la capacidad de construir, desplegar y mantener infraestructura en la nube de nivel producción. La elección de Reflex permitió unificar el desarrollo Full-Stack bajo un mismo lenguaje, mientras que la infraestructura subyacente fue diseñada con un enfoque total en la cultura DevOps: priorizar la escalabilidad, seguridad, automatización continua y optimización de recursos.
+
+## 🏗️ Diagrama de Infraestructura
+![Arquitectura AWS y CI/CD](/projects/portafolio_web/Flujo_Infraestructura_Portafolio.webp)
+
+**El flujo de trabajo automatizado sigue los siguientes pasos:**
+1. **Desencadenador (Trigger):** El pipeline se activa automáticamente cada vez que realizo un git push a la rama principal de mi repositorio en GitHub.
+2. **Entorno de Compilación (Build):** GitHub Actions levanta un entorno virtual (Runner), donde instala las dependencias de Python y el framework Reflex.
+3. **Generación de Estáticos:** Se ejecuta el comando de Reflex para exportar la aplicación. Esto compila el Frontend (HTML, CSS, JavaScript) y genera los archivos estáticos finales.
+4. **Autenticación Segura en AWS:** Utilizando **AWS IAM**, configuré un usuario dedicado exclusivamente para GitHub Actions. Las credenciales de este usuario (Access Keys) están almacenadas de forma segura en los **Secrets** del repositorio de GitHub. Esto cumple con el principio de menor privilegio, otorgando permisos solo para interactuar con el bucket S3 específico.
+5. **Despliegue a S3:** El pipeline utiliza la AWS CLI para sincronizar (aws s3 sync) los archivos estáticos generados directamente en el bucket de Amazon S3, configurado para el hosting de sitios estáticos.
+6. **Invalidación de Caché:** Como paso final, el pipeline ejecuta una invalidación de caché en AWS CloudFront. Esto fuerza a la CDN a buscar las versiones más recientes de los archivos en S3, asegurando que los usuarios visualicen los cambios de inmediato sin tener que esperar a que expire el TTL de la caché.
+
+**Beneficios técnicos:** Esta automatización garantiza que el proceso de despliegue sea repetible, reduce el riesgo de error humano y minimiza el tiempo entre escritura del código y su disponibilidad en producción.
+
+## ⚡ Retos y Optimizaciones:
+El desarrollo de esta infraestructura no fue estático; evolucionó para resolver problemas reales de operación. El reto técnico más significativo durante el ciclo de vida de este proyecto fue la optimización radical de los costos de infraestructura en AWS sin sacrificar el rendimiento ni la disponibilidad global.
+
+* **El Problema:** En su versión inicial, el backend y el frontend de la aplicación estaban alojados y ejecutándose mediante contenedores de **AWS ECS** (Elastic Container Service). Aunque esta arquitectura era robusta, mantenía recursos de cómputo encendidos de forma continua, lo que generaba un gasto operativo mensual completamente innecesario para el tráfico y la naturaleza de un portafolio personal.
+* **La Solución:** Para aplicar principios reales de eficiencia y arquitectura de Cloud, tomé la decisión de desmantelar la infraestructura basada en contenedores y migrar a un entorno simple, económico y acorde a un portafolio web usando solamente **AWS S3** y **AWS CloudFront**.
+
+    * Se dieron de baja todas las tareas y clústeres de **AWS ECS**.
+    * Se refactorizó la exportación del proyecto en Reflex para generar una build 100% estática.
+    * Se reconfiguraron los orígenes de la CDN en CloudFront para apuntar exclusivamente a un bucket de **AWS S3**.
+
+## ⚠️ Limitaciones Conocidas:
+Al migrar de una arquitectura basada en contenedores (ECS) a un modelo 100% estático serverless (S3), se eliminó el servidor backend. Esto cortó la conexión de WebSockets que el framework Reflex requiere para manejar estado interactivo de la aplicacion en tiempor real.
+
+Como resultado de esta decisión consciente de diseño, fuciones dinámicas como el **botón de cambio de idioma** se encuentran actualmente deshabilidatas. El ahorro radical de gastos operativos y la mejora en seguridad justificaron la pérdida temporal de esta funcionalidad, la  cual queda como deuda técnica para una futura refactorización mediante enrutamiento estático.
+
+## ✅​ El resultado:
+Esta migración transformó el proyecto de un modelo de cómputo continuo a un modelo de alojamiento estático **serverless**. Esto no solo redujo drásticamente la factura mensual de AWS a **una fracción de su costo original**, sino que también disminuyó la superficie de ataque, eliminó la necesidad de parchear servidores y delegó toda la carga de distribución global y seguridad a AWS CloudFront, mejorando el **tiempo de respuesta** para el usuario final.
+""", 
 
         # CONTENIDO DE LA SECCIÓN "CERTIFICACIONES"
 
@@ -185,18 +226,58 @@ TEXTOS = {
         
         # CONTENIDO DE LA SECCIÓN "PROYECTOS"
         "projects_title": "Projects",
-        "project_1": "StackTON",
-        "project_1_description": "Architecture of IT Solutions. Implementations of Infrastructure in AWS and web development with Reflex and conventional Stack.",
+        "project_1": "Personal Web Portfolio",
+        "project_1_description": "Full-Stack development and AWS deployment with the use of DevOps culture.",
         "project_2": "Python | Numeric Methods Script",
         "project_2_description": "A Python script that implements various numerical methods for solving mathematical problems, such as root finding, numerical integration, and differential equations.",
-        "project_3": "Future Project",
-        "project_3_description": "In development... Stay tuned for updates!",
+        "project_3": "StackTON",
+        "project_3_description": "Architecture of IT Solutions. Implementations of Infrastructure in AWS and web development with Reflex and conventional Stack.",
         "project_4": "Future Project",
         "project_4_description": "In development... Stay tuned for updates!",
         "project_5": "Future Project",
         "project_5_description": "In development... Stay tuned for updates!",
         "project_6": "Future Project",
         "project_6_description": "In development... Stay tuned for updates!",
+
+        # CONTENIDO DE LA SECCIÓN "DOCUMENTACIÓN"
+"doc_markdown": """
+# 🚀 Architecture and CI/CD Documentation
+
+The web portfolio (mickmisael.com) is not just a project and experience gallery, but a practical and functional demonstration of my knowledge and skills in Cloud architecture and automated deployment.
+
+Developed entirely in Python using the Reflex framework, the main goal of this project is to showcase the ability to build, deploy, and maintain production-grade cloud infrastructure. Choosing Reflex allowed me to unify Full-Stack development under a single language, while the underlying infrastructure was designed with a total focus on DevOps culture: prioritizing scalability, security, continuous automation, and resource optimization.
+
+## 🏗️ Infrastructure Diagram
+![AWS Architecture and CI/CD](/projects/portafolio_web/Flujo_Infraestructura_Portafolio.webp)
+
+**The automated workflow follows these steps:**
+1. **Trigger:** The pipeline is automatically triggered every time I perform a git push to the main branch of my GitHub repository.
+2. **Build Environment:** GitHub Actions spins up a virtual environment (Runner), where it installs the Python dependencies and the Reflex framework.
+3. **Static Generation:** The Reflex command is executed to export the application. This compiles the Frontend (HTML, CSS, JavaScript) and generates the final static files.
+4. **Secure AWS Authentication:** Using **AWS IAM**, I configured a dedicated user exclusively for GitHub Actions. The credentials for this user (Access Keys) are securely stored in the **Secrets** of the GitHub repository. This complies with the principle of least privilege, granting permissions to interact only with the specific S3 bucket.
+5. **Deployment to S3:** The pipeline uses the AWS CLI to sync (`aws s3 sync`) the generated static files directly into the Amazon S3 bucket, configured for static website hosting.
+6. **Cache Invalidation:** As a final step, the pipeline executes a cache invalidation in AWS CloudFront. This forces the CDN to fetch the latest versions of the files from S3, ensuring users see the changes immediately without having to wait for the cache TTL to expire.
+
+**Technical benefits:** This automation guarantees a repeatable deployment process, reduces the risk of human error, and minimizes the time between writing code and its availability in production.
+
+## ⚡ Challenges and Optimizations:
+The development of this infrastructure was not static; it evolved to solve real operational problems. The most significant technical challenge during the lifecycle of this project was the radical optimization of AWS infrastructure costs without sacrificing performance or global availability.
+
+* **The Problem:** In its initial version, the application's backend and frontend were hosted and running using **AWS ECS** (Elastic Container Service) containers. Although this architecture was robust, it kept compute resources running continuously, generating a monthly operational expense that was completely unnecessary for the traffic and nature of a personal portfolio.
+* **The Solution:** To apply real principles of efficiency and Cloud architecture, I made the decision to dismantle the container-based infrastructure and migrate to a simple, cost-effective environment suitable for a web portfolio using only **AWS S3** and **AWS CloudFront**.
+
+    * All **AWS ECS** tasks and clusters were decommissioned.
+    * The project export in Reflex was refactored to generate a 100% static build.
+    * The CDN origins in CloudFront were reconfigured to point exclusively to an **AWS S3** bucket.
+
+## ⚠️ Known Limitations:
+By migrating from a container-based architecture (ECS) to a 100% static serverless model (S3), the backend server was eliminated. This severed the WebSockets connection that the Reflex framework requires to manage interactive application state in real-time.
+
+As a result of this conscious design decision, dynamic features such as the **language toggle button** are currently disabled. The radical savings in operational costs and the improvement in security justified the temporary loss of this functionality, which remains as technical debt for future refactoring via static routing.
+
+## ✅ The Result:
+This migration transformed the project from a continuous compute model to a **serverless** static hosting model. This not only drastically reduced the monthly AWS bill to **a fraction of its original cost**, but also decreased the attack surface, eliminated the need to patch servers, and offloaded all global distribution and security workloads to AWS CloudFront, improving the **response time** for the end user.
+""",
 
         # CONTENIDO DE LA SECCIÓN "CONTACTO"
         "contact_title": "Contact",

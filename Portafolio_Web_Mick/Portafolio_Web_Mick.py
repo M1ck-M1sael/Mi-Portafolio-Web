@@ -8,6 +8,7 @@ from .views.about import about
 from .views.cert import certifications
 from .views.projects import projects
 from .views.contact import contact
+from .views.document import documentacion_page
 
 def index() -> rx.Component:
     return rx.box(
@@ -43,4 +44,10 @@ app.add_page(
     index,
     route="/",
     title="Mick Misael | Portafolio",
+)
+
+app.add_page(
+    documentacion_page,
+    route="/documentacion",
+    title="Documentación | Mick Misael",
 )

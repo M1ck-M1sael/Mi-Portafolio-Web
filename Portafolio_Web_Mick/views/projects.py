@@ -14,7 +14,7 @@ project_card_style = {
     }
 }
 
-def project_item(title: str, description: str, image: str, tags: list, url: str) -> rx.Component:
+def project_item(title: str, description: str, image: str, tags: list, repo_url: str = "", docs_url: str = "") -> rx.Component:
     return rx.box(
         rx.vstack(
             rx.box(
@@ -27,16 +27,35 @@ def project_item(title: str, description: str, image: str, tags: list, url: str)
                         padding_top="1em"
                     ),
 
-                    rx.link(
-                        rx.icon(tag="external-link", size=20),
-                        href=url,
-                        is_external=True,
+                    rx.hstack(
+
+                        rx.cond(
+                            docs_url != "",
+                            rx.link(
+                                rx.icon(tag="file-text", size=20),
+                                href=docs_url,
+                                is_external=True,
+                                color="white",
+                                _hover={"color": "#0070f3", "transform": "scale(1.2)"},
+                                transition="all 0.2s",
+                            )
+                        ),
+
+                        rx.cond(
+                            repo_url != "",
+                            rx.link(
+                                rx.icon(tag="github", size=20),
+                                href=repo_url,
+                                is_external=True,
+                                color="white",
+                                _hover={"color": "#0070f3", "transform": "scale(1.2)"},
+                                transition="all 0.2s",
+                            )
+                        ),
+                        spacing="4",
                         position="absolute",
                         bottom="1.2em",
                         right="1.2em",
-                        color="white",
-                        _hover={"color": "#0070f3", "transform": "scale(1.2)"},
-                        transition="all 0.2s",
                     ),
 
                     position="absolute",
@@ -71,49 +90,52 @@ def projects() -> rx.Component:
             rx.heading(
                 State.contenido["projects_title"], 
                 size="9", color="white", margin_bottom="1.5em", text_align="center"
-                ),
+            ),
             rx.grid(
                 project_item(
                     State.contenido["project_1"],
                     State.contenido["project_1_description"],
-                    "/projects/StackTON_Projects.jpg",
+                    "/projects/portafolio_web/portafolio_web_mick.webp",
                     ["AWS", "Python", "AWS"],
-                    "https://github.com/M1ck-M1sael/Stack-618_Official_Web/tree/main"
+                    repo_url="https://github.com/M1ck-M1sael/Mi-Portafolio-Web",
+                    docs_url="/documentacion"
                 ),
                 project_item(
                     State.contenido["project_2"],
                     State.contenido["project_2_description"],
-                    "/projects/Metod_Py.webp", 
+                    "/projects/metodos_numericos/Metod_Py.webp", 
                     ["Python", "GitHub", "Mathematics"],
-                    "https://github.com/M1ck-M1sael/Metodos-Numericos-Scripts-Python"
+                    repo_url="https://github.com/M1ck-M1sael/Metodos-Numericos-Scripts-Python"
                 ),
+
                 project_item(
                     State.contenido["project_3"],
                     State.contenido["project_3_description"],
-                    "/projects/OnProcess_Projects.jpg", 
-                    ["Matarile", "Rile", "Ro"],
-                    "https://www.youtube.com/watch?v=-jHYYzS0U-c"
+                    "/projects/stackton/StackTON_Projects.jpg ",
+                    ["Reflex", "AWS", "Python"],
+                    repo_url="",
+                    docs_url=""
                 ),
                 project_item(
                     State.contenido["project_4"],
                     State.contenido["project_4_description"],
                     "/projects/OnProcess_Projects.jpg", 
                     ["Matarile", "Rile", "Ro"],
-                    "https://www.youtube.com/watch?v=-jHYYzS0U-c"
+                    repo_url="https://www.youtube.com/watch?v=-jHYYzS0U-c"
                 ),
                 project_item(
                     State.contenido["project_5"],
                     State.contenido["project_5_description"],
                     "/projects/OnProcess_Projects.jpg", 
                     ["Matarile", "Rile", "Ro"],
-                    "https://www.youtube.com/watch?v=qwfhifRyhok"
+                    repo_url="https://www.youtube.com/watch?v=qwfhifRyhok"
                 ),
                 project_item(
                     State.contenido["project_6"],
                     State.contenido["project_6_description"],
                     "/projects/OnProcess_Projects.jpg", 
                     ["Matarile", "Rile", "Ro"],
-                    "https://www.youtube.com/watch?v=-jHYYzS0U-c"
+                    repo_url="https://www.youtube.com/watch?v=-jHYYzS0U-c"
                 ),
                 columns={"initial": "1", "sm": "2", "lg": "3"},
                 spacing="6",
