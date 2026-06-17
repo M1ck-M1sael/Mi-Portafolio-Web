@@ -24,7 +24,6 @@ def background():
                 "backgroundColor": "black",
             },
         ),
-        # Este script se ejecuta en el navegador del usuario automáticamente, sin backend
         rx.script("""
             setTimeout(() => {
                 const v = document.getElementById("bg-video");
