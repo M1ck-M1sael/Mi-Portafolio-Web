@@ -19,7 +19,7 @@ TEXTOS = {
         "about_title": "Sobre mí",
         "about_name": "¡Hola! Soy Misael.",
         "description_1": "Soy estudiante de Ingeniería en Sistemas Computacionales en el Tecnológico Nacional de México, y actualmente trabajo como Systems Administrator, en donde gestiono infraestructura, soporte y operación de sistemas en entornos productivos.",
-        "description_2": "Actualmente estoy estudiando diferentes cursos para formarme como DevOps Engieneer.",
+        "description_2": "Actualmente estoy estudiando diferentes cursos para formarme como DevOps Engineer.",
         "description_3": "Me caracterizo por el aprendizaje constante y la disciplina técnica. Actualmente me encuentro en proceso de obtener la certificación AWS Cloud Practitioner, fortaleciendo mis conocimientos en servicios cloud, buenas prácticas y arquitectura básica.",
         "funfact": "Amante de los gatos, arañas y el exceso de café... soy el estereotipo de mi carrera, ¿verdad? ¡Caray!",
         "skills_title": "Habilidades",
@@ -126,6 +126,15 @@ Esta migración transformó el proyecto de un modelo de cómputo continuo a un m
                 "date": "Diciembre 2025",
                 "badge_url": "/certs/AWS_CP_Cert.webp",
                 "verify_url": "https://www.udemy.com/certificate/UC-278702d3-b0cd-49d9-a689-c4456046b9c6/",
+                "btn_verify": "Verificar Credencial",
+            },
+
+            {
+                "title": "Terrafomr: De principiante a Certificado 2026",
+                "issuer": "Udemy",
+                "date": "Junio 2026",
+                "badge_url": "/certs/TERRAFORM.webp",
+                "verify_url": "https://www.udemy.com/certificate/UC-8318999e-03c1-46a1-bd3c-64faa607e63b/",
                 "btn_verify": "Verificar Credencial",
             },
 
@@ -299,6 +308,15 @@ This migration transformed the project from a continuous compute model to a **se
                 "date": "March 2026",
                 "badge_url": "/certs/AWS_CP_Cert.webp",
                 "verify_url": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-278702d3-b0cd-49d9-a689-c4456046b9c6.pdf",
+                "btn_verify": "Verify Credential",
+            },
+
+            {
+                "title": "Terraform: From Beginner to Certificate 2026",
+                "issuer": "Udemy",
+                "date": "June 2026",
+                "badge_url": "/certs/TERRAFORM.webp",
+                "verify_url": "https://www.udemy.com/certificate/UC-8318999e-03c1-46a1-bd3c-64faa607e63b/",
                 "btn_verify": "Verify Credential",
             },
 
