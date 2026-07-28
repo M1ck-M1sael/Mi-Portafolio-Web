@@ -130,6 +130,15 @@ Esta migración transformó el proyecto de un modelo de cómputo continuo a un m
             },
 
             {
+                "title": "Docker Traning Course",
+                "issuer": "KodeKloud",
+                "date": "Julio 2025",
+                "badge_url": "/certs/DOCK_TRN_COURSE_KODEKLOUD.webp",
+                "verify_url": "https://lnkd.in/p/g-fxegwU",
+                "btn_verify": "Verificar Credencial",
+            },
+
+            {
                 "title": "Terrafomr: De principiante a Certificado 2026",
                 "issuer": "Udemy",
                 "date": "Junio 2026",
@@ -309,6 +318,15 @@ This migration transformed the project from a continuous compute model to a **se
                 "badge_url": "/certs/AWS_CP_Cert.webp",
                 "verify_url": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-278702d3-b0cd-49d9-a689-c4456046b9c6.pdf",
                 "btn_verify": "Verify Credential",
+            },
+
+            {
+                "title": "Docker Traning Course",
+                "issuer": "KodeKloud",
+                "date": "July 2025",
+                "badge_url": "/certs/DOCK_TRN_COURSE_KODEKLOUD.webp",
+                "verify_url": "https://lnkd.in/p/g-fxegwU",
+                "btn_verify": "Verificar Credencial",
             },
 
             {

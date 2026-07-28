@@ -37,9 +37,9 @@ def download_cv_button() -> rx.Component:
             transition="all 0.3s ease",
             cursor="pointer",
         ),
-        href="/about/CV_Misael.pdf", 
+        href="/about/CV_Misael_Lopez_Franco.pdf", 
         is_external=True,
-        custom_attrs={"download": "CV_Misael.pdf"},
+        custom_attrs={"download": "CV_Misael_Lopez_Franco.pdf"},
         style={"text_decoration": "none"} 
     )
 
